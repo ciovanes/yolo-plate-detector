@@ -8,3 +8,13 @@ class LicensePlateDetector:
     def detect(self, frame):
         result = self.model(frame)
         return result
+    
+
+class VehicleDetector:
+
+    def __init__(self, model_path):
+        self.model = YOLO(model_path)
+    
+    def detect(self, frame):
+        result = self.model(frame)
+        return result
