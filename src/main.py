@@ -27,8 +27,16 @@ def car_detection(model):
     
     boxes = []
     scores = []
+    classes = []
 
     vehicle_classes = [2, 3, 5, 7]
+
+    vehicle_dict = {
+        2: 'car',
+        3: 'motorcycle',
+        5: 'bus',
+        7: 'truck'
+    }
 
     for box in vehicle_results[0].boxes:
         x1, y1, x2, y2 = map(int, box.xyxy[0])
@@ -36,10 +44,12 @@ def car_detection(model):
         confidence = float(box.conf[0]) 
         
         if class_id in vehicle_classes and confidence > 0.5:
+            # print(f'class: {class_id}, {vehicle_dict.get(class_id)}')
             boxes.append([x1, y1, x2, y2])
             scores.append(box.conf[0])
-    
-    return boxes, scores
+            classes.append(vehicle_dict.get(class_id)) 
+
+    return boxes, scores, classes 
 
 
 def license_plate_detection(model):
@@ -87,12 +97,17 @@ while cap.isOpened():
     window_width, window_height = 1024, 720 
     
     # Vehicle detection and bbox drawing
-    v_boxes, v_scores = car_detection(vehicle_detector)
+    v_boxes, v_scores, v_classes = car_detection(vehicle_detector)
+    # print(f'v_class: {v_class}')
     v_indices = apply_NMS(v_boxes, v_scores)
 
     for i in v_indices:
         box = v_boxes[i]
+        v_class = v_classes[i]
         cv.rectangle(frame, (box[0], box[1]), (box[2], box[3]), (0, 255, 0), 2)
+        cv.putText(frame, f'class: {v_class}', (box[0], box[1] - 10), cv.FONT_HERSHEY_COMPLEX,
+                   0.5, (0, 240, 0), 1)
+
 
     # License plate detection and bbox drawing
     lp_boxes, lp_scores = license_plate_detection(license_plate_detector)
