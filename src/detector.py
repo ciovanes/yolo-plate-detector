@@ -6,7 +6,7 @@ class LicensePlateDetector:
         self.model = YOLO(model_path)
 
     def detect(self, frame):
-        result = self.model(frame)
+        result = self.model(frame, verbose=False)
         return result
     
 
@@ -16,5 +16,5 @@ class VehicleDetector:
         self.model = YOLO(model_path)
     
     def detect(self, frame):
-        result = self.model(frame)
+        result = self.model(frame, verbose=False)
         return result
