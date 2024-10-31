@@ -75,13 +75,17 @@ class TrafficFlowAnalyzer:
     
         return boxes, scores 
     
+
     def draw_licence_plate_bbox(self, frame, box, plate_number):
         text = f'plate: {plate_number}'
         cv.rectangle(frame, (box[0], box[1]), (box[2], box[3]), (0, 255, 0), 1)
         draw_text(frame, text, box[0], box[1], (box[0], box[1] - 10), (0, 0, 0), (0, 255, 255))
 
+
     def run(self):
         cap = cv.VideoCapture(self.video_path)
+        
+        detected_plates = set()
 
         while cap.isOpened():
             ret, frame = cap.read()
@@ -104,9 +108,6 @@ class TrafficFlowAnalyzer:
             # Apply NMS to bbox
             v_indices = apply_NMS(v_boxes, v_scores)
 
-
-            detected_plates = set() 
-
             # Recorrer todos los bbox 
             for i in v_indices:
                 box = v_boxes[i]
@@ -124,13 +125,14 @@ class TrafficFlowAnalyzer:
                         x1, y1, x2, y2 = lp_box
                         roi = frame[y1:y2, x1:x2]
                         license_plate_number = self.license_plate_model.extract_license_plate_number(roi)
+                        # print(license_plate_number)
 
                     if license_plate_number:
                         plate_number = license_plate_number[0]
                         detected_plates.add(plate_number)
                         box = [x1, y1, x2, y2]
                         self.draw_licence_plate_bbox(frame, box, plate_number)
-                        print(detected_plates)
+                        # print(detected_plates)
 
 
             # Quit if 'q' pressed 
@@ -145,6 +147,7 @@ class TrafficFlowAnalyzer:
 
         cap.release()
         cv.destroyAllWindows()
+        print(detected_plates)
 
 if __name__ == '__main__':
     
