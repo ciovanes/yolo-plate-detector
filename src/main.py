@@ -1,196 +1,161 @@
 import cv2 as cv
 from detector import LicensePlateDetector, VehicleDetector
-from utils import limit_fps
+from utils import limit_fps, apply_NMS, draw_text
 import numpy as np
-import easyocr
 
 
-# Capture the video
-video_path = '../data/traffic-flow-limited(5fps).mp4'
-# video_path = '../data/traffic-flow.mp4'
+class TrafficFlowAnalyzer:
 
-cap = cv.VideoCapture(video_path)
-
-# Load the models
-vehicle_detector = VehicleDetector('../models/yolov8n.pt')
-license_plate_detector = LicensePlateDetector('../models/license_plate_detector.pt')
-
-# Load OCR
-ocr_reader = easyocr.Reader(['es'])
-
-# Save the license plates
-detected_plates = [] 
-
-# 
-# line_y = 560 
-# car_count = 0
+    def __init__(self, video_path, vehicle_model, license_plate_model):
+        self.video_path = video_path
+        self.vehicle_model = vehicle_model
+        self.license_plate_model = license_plate_model
 
 
-def car_detection(model):
-    """
-    Using yolov8n.pt model to detect vehicles and get their boxes and scores
-
-    Return:
-        boxes -> 
-        scores -> 
-    """
-    vehicle_results = model.detect(frame)
-    
-    boxes = []
-    scores = []
-    classes = []
-
-    vehicle_classes = [2, 3, 5, 7]
-
-    vehicle_dict = {
-        2: 'car',
-        3: 'motorcycle',
-        5: 'bus',
-        7: 'truck'
-    }
-
-    for box in vehicle_results[0].boxes:
-        x1, y1, x2, y2 = map(int, box.xyxy[0])
-        class_id = int(box.cls[0])
-        confidence = float(box.conf[0]) 
-        
-        if class_id in vehicle_classes and confidence > 0.5:
-            # print(f'class: {class_id}, {vehicle_dict.get(class_id)}')
-            boxes.append([x1, y1, x2, y2])
-            # Convert the confidence score tensor to a CPU-based float before appending.
-            scores.append(box.conf[0].cpu()) 
-            classes.append(vehicle_dict.get(class_id)) 
-
-    return boxes, scores, classes 
-
-
-def license_plate_detection(model):
-    license_results = model.detect(frame)
-
-    boxes = []
-    scores = []
-
-    for box in license_results[0].boxes:
-        x1, y1, x2, y2 = map(int, box.xyxy[0])
-        class_id = int(box.cls[0])
-        confidence = float(box.conf[0])
-
-        if class_id == 0 and confidence > 0.5:
-            boxes.append([x1, y1, x2, y2])
-            scores.append(box.conf[0])
-
-    return boxes, scores 
-
-def apply_NMS(boxes, scores):
-    """
-        Apply non max suppression technique to select the best bounding boxes 
-        out of a set of overlapping boxes 
+    def vehicle_detection(self, frame):
+        """
+        Using yolov8n.pt model to detect vehicles and get their boxes and scores
 
         Return:
-            indices ->
-    """
-    boxes = np.array(boxes)
-    scores = np.array(scores)
+            boxes -> 
+            scores -> 
+        """
+        vehicle_results = self.vehicle_model.detect(frame)
 
-    # Apply Non-maxium suppresion
-    indices = cv.dnn.NMSBoxes(boxes.tolist(), scores.tolist(), 
-                              score_threshold=0.5, nms_threshold=0.4)
+        boxes = []
+        scores = []
+        classes = []
 
-    return indices
+        vehicle_classes = [2, 3, 5, 7]
 
-def extract_license_plate_number(roi):
-    # Apply OCR on roi 
-    results = ocr_reader.readtext(roi)
-    # Extract license plate number 
-    license_plate_numbers = [result[1] for result in results]
-    return license_plate_numbers
+        vehicle_dict = {
+            2: 'car',
+            3: 'motorcycle',
+            5: 'bus',
+            7: 'truck'
+        }
+
+        for box in vehicle_results[0].boxes:
+            x1, y1, x2, y2 = map(int, box.xyxy[0])
+            class_id = int(box.cls[0])
+            confidence = float(box.conf[0]) 
+
+            if class_id in vehicle_classes and confidence > 0.5:
+                # print(f'class: {class_id}, {vehicle_dict.get(class_id)}')
+                boxes.append([x1, y1, x2, y2])
+                # Convert the confidence score tensor to a CPU-based float before appending.
+                scores.append(box.conf[0].cpu()) 
+                classes.append(vehicle_dict.get(class_id)) 
+
+        return boxes, scores, classes 
 
 
-while cap.isOpened():
-    ret, frame = cap.read()
-
-    if not ret:
-        break
-    
-    window_name = 'frame'
-    window_width, window_height = 1280, 720 
-    
-    # Vehicle detection and bbox drawing
-    v_boxes, v_scores, v_classes = car_detection(vehicle_detector)
-    # print(f'v_class: {v_class}')
-    v_indices = apply_NMS(v_boxes, v_scores)
-
-    
-    for i in v_indices:
-        box = v_boxes[i]
-        v_class = v_classes[i]
+    def draw_vehicle_bbox(self, frame, box, v_class):
         cv.rectangle(frame, (box[0], box[1]), (box[2], box[3]), (0, 255, 0), 2)
 
         text = f'class: {v_class}' 
-        text_size = cv.getTextSize(text, cv.FONT_HERSHEY_COMPLEX, 0.5, 1)
-        text_width, text_height = text_size[0] 
-        cv.rectangle(frame, (box[0], box[1] - text_height - 10), (box[0] + text_width, box[1]), (0, 0, 0), -1) 
+        draw_text(frame, text, box[0], box[1], (box[0], box[1] - 10), 
+                  (0, 0, 0), (0, 255, 0))
+
+
+    def license_plate_detection(self, frame):
+        license_results = self.license_plate_model.detect(frame)
+    
+        boxes = []
+        scores = []
+    
+        for box in license_results[0].boxes:
+            x1, y1, x2, y2 = map(int, box.xyxy[0])
+            class_id = int(box.cls[0])
+            confidence = float(box.conf[0])
+    
+            if class_id == 0 and confidence > 0.5:
+                boxes.append([x1, y1, x2, y2])
+                scores.append(box.conf[0])
+    
+        return boxes, scores 
+    
+    def draw_licence_plate_bbox(self, frame, box, plate_number):
+        text = f'plate: {plate_number}'
+        cv.rectangle(frame, (box[0], box[1]), (box[2], box[3]), (0, 255, 0), 1)
+        draw_text(frame, text, box[0], box[1], (box[0], box[1] - 10), (0, 0, 0), (0, 255, 255))
+
+    def run(self):
+        cap = cv.VideoCapture(self.video_path)
+
+        while cap.isOpened():
+            ret, frame = cap.read()
+
+            if not ret:
+                break
+    
+            window_name = 'frame'
+
+            cv.namedWindow(window_name, cv.WINDOW_NORMAL)
+
+            # screen_width = cv.getWindowImageRect(window_name)[2]
+            # screen_height = cv.getWindowImageRect(window_name)[3]
+            screen_width = 1280
+            screen_height = 720 
+            cv.resizeWindow(window_name, screen_width, screen_height)
+
+            # Get car detection (bbox, confidence and class)
+            v_boxes, v_scores, v_classes = self.vehicle_detection(frame)
+            # Apply NMS to bbox
+            v_indices = apply_NMS(v_boxes, v_scores)
+
+
+            detected_plates = set() 
+
+            # Recorrer todos los bbox 
+            for i in v_indices:
+                box = v_boxes[i]
+                v_class = v_classes[i]
+                self.draw_vehicle_bbox(frame, box, v_class)
+                
+                # Detect license plate on side of vehicle
+                lp_boxes, lp_scores = self.license_plate_detection(frame)
+                license_plate_number = None
+
+                for lp_box in lp_boxes:
+                    # Si esta dentro del coche
+                    if box[0] < lp_box[0] < box[2] and box[1] < lp_box[1] < box[3]:
+                        # Extraer el ROI para OCR
+                        x1, y1, x2, y2 = lp_box
+                        roi = frame[y1:y2, x1:x2]
+                        license_plate_number = self.license_plate_model.extract_license_plate_number(roi)
+
+                    if license_plate_number:
+                        plate_number = license_plate_number[0]
+                        detected_plates.add(plate_number)
+                        box = [x1, y1, x2, y2]
+                        self.draw_licence_plate_bbox(frame, box, plate_number)
+                        print(detected_plates)
+
+
+            # Quit if 'q' pressed 
+            if cv.waitKey(200) == ord('q'):
+                break
+
+            cv.imshow(window_name, frame)
         
-        cv.putText(frame, text, (box[0], box[1] - 10), cv.FONT_HERSHEY_COMPLEX,
-                   0.5, (0, 255, 0), 1)
+            # cap.release()
+            # cv.destroyAllWindows()
 
 
-        # Count cars
-        # if box[1] > line_y and box[0] > 125:
-        #     print(f'CAR ON: {box[0], box[1]}')
-        #     car_count += 1
-            # print(f'CAR COUNT: {car_count}')
+        cap.release()
+        cv.destroyAllWindows()
 
-
-        # License plate detection and bbox drawing
-        lp_boxes, lp_scores = license_plate_detection(license_plate_detector)
+if __name__ == '__main__':
     
-        for lp_box in lp_boxes:
-            if box[0] < lp_box[0] < box[2] and box[1] < lp_box[1] < box[3]:
-                # Extraer el ROI para OCR
-                x1, y1, x2, y2 = lp_box
-                roi = frame[y1:y2, x1:x2]
-                license_plate_number = extract_license_plate_number(roi)
+    video_path = '../data/traffic-flow-limited(5fps).mp4'
+    vehicle_detector = VehicleDetector('../models/yolov8n.pt')
+    license_plate_detector = LicensePlateDetector('../models/license_plate_detector.pt')
 
-                if license_plate_number:
-                    plate_number = license_plate_number[0]
-                    detected_plates.append(plate_number)
-                    text = f'plate: {plate_number}'
-                    cv.putText(frame, text, (x1, y1 - 10), cv.FONT_HERSHEY_COMPLEX, 0.5, (0, 255, 0), 1) 
-                    cv.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 1)
+    analyzer = TrafficFlowAnalyzer(
+        video_path,
+        vehicle_detector,
+        license_plate_detector
+    ) 
 
-                    # print(f'BOX[1]: {box[1]}')
-
-                    print(f'LICENSES DETECTED: {detected_plates}')
-            # cv.rectangle(frame, (box[0], box[1]), (box[2], box[3]), (0, 0, 255), 2)
-            # for score in lp_scores:
-            #     text = f'conf: {score:.2f}'
-            #     cv.putText(frame, text, (box[0], box[1] - 10), cv.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 1)
-
-
-    # Draw line to count cars
-    # line_x_draw = 125
-    # line_y_draw = 600 
-    # cv.rectangle(frame, (line_x_draw, line_y_draw), (window_width, line_y_draw), (255, 0, 0), 3)
-    # cv.putText(frame, f'car_cout: {car_count}', (10, line_y_draw - 10), cv.FONT_HERSHEY_SIMPLEX, 2, (255, 0, 0), 2)
-
-
-    # Show frames
-    # cv.imshow(window_name, cv.resize(frame, (window_width, window_height)))
-
-    cv.namedWindow("fs", cv.WND_PROP_FULLSCREEN)
-    
-    cv.rectangle(frame, (0, 900), (1918, 1075), (0, 0, 255), 1)
-
-    cv.setWindowProperty("fs", cv.WND_PROP_FULLSCREEN, cv.WND_PROP_FULLSCREEN)
-    cv.imshow("fs", frame)
-
-    # Quit if 'q' pressed 
-    if cv.waitKey(200) == ord('q'):
-        break
-
-    # cap.release()
-    # cv.destroyAllWindows()
-
-cap.release()
-cv.destroyAllWindows()
+    analyzer.run()
