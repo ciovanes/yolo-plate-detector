@@ -128,9 +128,9 @@ class TrafficFlowAnalyzer:
 
             # screen_width = cv.getWindowImageRect(window_name)[2]
             # screen_height = cv.getWindowImageRect(window_name)[3]
-            # screen_width = 1280
-            # screen_height = 720 
-            # cv.resizeWindow(window_name, screen_width, screen_height)
+            screen_width = 1280
+            screen_height = 720 
+            cv.resizeWindow(window_name, screen_width, screen_height)
 
             # Get car detection (bbox, confidence and class)
             v_boxes, v_scores, v_classes = self.vehicle_detection(frame)
