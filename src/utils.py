@@ -2,8 +2,11 @@ import ffmpeg
 import os
 import numpy as np
 import cv2 as cv
+import re
+import hashlib
 
-def limit_fps(src: str, dest: str, fps: int):
+
+def limit_fps(src: str, fps: int, dest=None):
 
     """
     Limits the frame rate of a video to the specified fps
@@ -60,3 +63,19 @@ def draw_text(frame, text, ptx, pty, txt_pt, bg_color, txt_color):
     cv.rectangle(frame, (ptx, pty - text_height - 10), (ptx + text_width, pty),
                  bg_color, -1) 
     cv.putText(frame, text, txt_pt, cv.FONT_HERSHEY_COMPLEX, 0.5, txt_color)
+
+
+def is_valid_license_plate(license_plate: str):
+    license_plate = license_plate.replace(' ', '')
+    return bool(re.match(r'^[a-zA-Z0-9]{6}$', license_plate))
+
+
+def format_license_plate(license_plate: str):
+    license_plate = license_plate.upper()
+    formatted_plate = license_plate[:4] + ' ' + license_plate[4:] 
+    return formatted_plate
+
+
+def generate_hash(license_plate, timestamp, latitude, longitude):
+    string = (f'{license_plate}{timestamp}{latitude}{longitude}')
+    return hashlib.sha256(string.encode()).hexdigest()
