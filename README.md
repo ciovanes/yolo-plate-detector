@@ -1,16 +1,19 @@
-python 3.12.7
+# YOLOv8 Plate Detector
 
-libs:
+## Requirements
+- Python 3.12.7
+- Install requirements.txt
+
+## Libraries
 - opencv-python
 - ultralytics
 - ffmpeg
 - easyocr
-- sort-tracker
 
-**TODO**
-- set id's for cars using (cv.legacy.MultiTracker_create())
-- filter license plate by confidence level
-- detect cars? using YOLO as well
+## License
+This project is under the [GNU General Public License v3.0](LICENSE)
+
+---
 
 **NOTES**
 - [COCO dataset classes](https://docs.ultralytics.com/datasets/detect/coco/#dataset-yaml)
