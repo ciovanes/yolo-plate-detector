@@ -7,6 +7,10 @@ from saver import LicensePlateSaver
 
 class TrafficFlowAnalyzer:
 
+    """
+        Class to analyze the traffic flow
+    """
+
     def __init__(self, video_path, vehicle_model, license_plate_model):
         self.video_path = video_path
         self.vehicle_model = vehicle_model
@@ -16,13 +20,11 @@ class TrafficFlowAnalyzer:
 
 
     def vehicle_detection(self, frame):
+       
         """
-        Using yolov8n.pt model to detect vehicles and get their boxes and scores
-
-        Return:
-            boxes -> 
-            scores -> 
+            Using yolov8n.pt model to detect vehicles and get their boxes and scores
         """
+        
         vehicle_results = self.vehicle_model.detect(frame)
 
         boxes = []
@@ -62,6 +64,12 @@ class TrafficFlowAnalyzer:
 
 
     def license_plate_detection(self, frame):
+        
+        """
+            Using pre-trained (license_plate_detector.pt) to detect license_plates and
+            get their boxes and scores
+        """
+
         license_results = self.license_plate_model.detect(frame)
     
         boxes = []
@@ -86,6 +94,11 @@ class TrafficFlowAnalyzer:
 
 
     def add_to_detected_plates(self, license_plate):
+
+        """
+            Add detected plates to a set (unique license plates)
+        """
+
         # Check current size
         current_size = len(self.detected_plates)
 
@@ -124,7 +137,7 @@ class TrafficFlowAnalyzer:
             # Apply NMS to bbox
             v_indices = apply_NMS(v_boxes, v_scores)
 
-            # Recorrer todos los bbox 
+            # Iterate over all the vehicles bbox 
             for i in v_indices:
                 box = v_boxes[i]
                 v_class = v_classes[i]
@@ -134,15 +147,17 @@ class TrafficFlowAnalyzer:
                 lp_boxes, lp_scores = self.license_plate_detection(frame)
                 license_plate_number = None
 
+                # Iterate over all the license plates bbox
                 for lp_box in lp_boxes:
-                    # Si esta dentro del coche
+                    # If the license plate is insede the car 
                     if box[0] < lp_box[0] < box[2] and box[1] < lp_box[1] < box[3]:
-                        # Extraer el ROI para OCR
+                        # Extract the ROI for OCR 
                         x1, y1, x2, y2 = lp_box
                         roi = frame[y1:y2, x1:x2]
                         license_plate_number = self.license_plate_model.extract_license_plate_number(roi)
                         # print(license_plate_number)
 
+                    # If the model detect any license plate
                     if license_plate_number and is_valid_license_plate(license_plate_number[0]):
                         license_plate = format_license_plate(license_plate_number[0])
                         box = [x1, y1, x2, y2]

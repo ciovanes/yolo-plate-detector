@@ -1,393 +1,393 @@
 [
     {
-        "hash": "30084902fd5a32c2bfb0cb02586b79e517c47624de10e2eb4480616794a91eaa",
+        "hash": "0232fd5e38717a9fa29343ad0a921bc643652f50e3aeee3a28976af4301552ef",
         "license_plate": "WISI SU",
-        "timestamp": "2024-11-01T23:05:15.327613",
+        "timestamp": "2024-11-01T23:48:42.821861",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "af6dc56c72fdb8385c98a36638c31fc370f8556954643bb59bead0df1c7f86b3",
+        "hash": "fbdc8fd54e4bba315241d6de46635811d5270c01b185f96f094c118da3497118",
         "license_plate": "NIJ  NRU",
-        "timestamp": "2024-11-01T23:05:15.885802",
+        "timestamp": "2024-11-01T23:48:43.383515",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "5723046140202c7d73ceae3bcda7d0939da27f323a61423965330622de39524a",
+        "hash": "1e209c0218065a7ed533e64dd94ceb981e0679e43c60a78d54660e2794169d9e",
         "license_plate": "WSIU SU",
-        "timestamp": "2024-11-01T23:05:17.911202",
+        "timestamp": "2024-11-01T23:48:45.603613",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "293793003c249cda31c3598f130c3f821f68378c5ef5354a6505514520de9648",
+        "hash": "c4907807e6f26f0a471dc31d5c5130dc4088b3d47137ccaa7789730910d0060d",
         "license_plate": "WSIV SU",
-        "timestamp": "2024-11-01T23:05:18.210896",
+        "timestamp": "2024-11-01T23:48:45.879538",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "abeabc4cf85585a66abc8eeadb8929ddef5472573453e03f1775eade7b01b249",
+        "hash": "fe58c5733d23a2ffe3c23fa1e1bbff7e4d14c200d3bdb0d83faa878fd5a7d2f1",
         "license_plate": "IFJA ZH",
-        "timestamp": "2024-11-01T23:05:27.592911",
+        "timestamp": "2024-11-01T23:48:55.455142",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "50bb4044d4216443cb2501af93f16af38fc0f2be9b68bc0b3335bdd91da748e9",
+        "hash": "f01560357a6e5372e7d4495f6bed4bb6518337ab6390e5ab750b627d4d04a2b2",
         "license_plate": "FJAZ HY",
-        "timestamp": "2024-11-01T23:05:28.184855",
+        "timestamp": "2024-11-01T23:48:56.046811",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "12311b69fb64a66565e5caaa17e5556060462ff3a979eeaf151cdc20d84def18",
+        "hash": "aa14b0ad54db9ecbaae837b69f709ec91994877c64ca2ea0fe579ab0ed3ef9bf",
         "license_plate": "ESIN EG",
-        "timestamp": "2024-11-01T23:05:29.828768",
+        "timestamp": "2024-11-01T23:48:57.713563",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "fb8199afceca3ae8fbe26a4d63092e5e7a51c6d2761134ffdca1922a2b3026f5",
+        "hash": "c525e846b0845889d78f5a74aa96a94fa188256bb7fc6931dd70eee4d6d65ad8",
         "license_plate": "LQE  HVE",
-        "timestamp": "2024-11-01T23:05:32.449962",
+        "timestamp": "2024-11-01T23:49:00.345341",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "3731f6a1267becffefbfd5b3d87224f998c66a2b9efd98b03dd9ee3c705dc091",
+        "hash": "fc4cf892f3f3ea38c4ca4d1b0c3186808966d1777b5abf136b010579d1a5079c",
         "license_plate": "LOP  HVE",
-        "timestamp": "2024-11-01T23:05:33.501792",
+        "timestamp": "2024-11-01T23:49:01.453535",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "88e9ef9cb28758fa65a7ec3f85a66f8b3d11799183550483a081dcfa96288655",
+        "hash": "0b03aefa18d1c8bba0c9010dcadf3b30a43111631cf3552530026caa9245db21",
         "license_plate": "HNIA CD",
-        "timestamp": "2024-11-01T23:05:33.520799",
+        "timestamp": "2024-11-01T23:49:01.473418",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "af0c278d480dbda3a72db297e56355783815878e8c1da67d92736558e68517c1",
+        "hash": "48fb05bbe636a62dda49b0efceb74f9d7db24501dcfe6de96ec346a900a542b6",
         "license_plate": "BCES  SJ",
-        "timestamp": "2024-11-01T23:05:36.535564",
+        "timestamp": "2024-11-01T23:49:04.500595",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "a54ee377009769e3ef7b1e10bcfd5cbc2ede88ed45799a5a755e3cae6291d410",
+        "hash": "bd89a3bf311ccb3b4ff472ef951f500e9ed5d3f8ef13b961110a13e42280dea1",
         "license_plate": "IK64 PM",
-        "timestamp": "2024-11-01T23:05:39.804031",
+        "timestamp": "2024-11-01T23:49:07.864094",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "6777ae46e03b0f74561d4d74432426476ec8241ee7b25a533f50ffb945eda2bb",
+        "hash": "99bf49be0aba2f416e8323faa1448c25c30393da77d615e789d3d440fd62486c",
         "license_plate": "EFOD ZL",
-        "timestamp": "2024-11-01T23:05:40.077823",
+        "timestamp": "2024-11-01T23:49:08.118004",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "4aa8c710e11d69d6a6c78f448793b86ef49af98077a2aca73c9125041c9ecf8c",
+        "hash": "ebb6387f94c2d13da437532b637d0759938ffeaad1bc8e6c85c33d7b1220136d",
         "license_plate": "ENOD ZO",
-        "timestamp": "2024-11-01T23:05:40.634647",
+        "timestamp": "2024-11-01T23:49:08.689651",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "0bdbf8a6a2161b3d1416c03495805d341e8ebc45a56d5902c75074906f108336",
+        "hash": "153190b915ddc76c31cdf8574c3592a056a0f068a773518342cc17736694e7e5",
         "license_plate": "LKEA ON",
-        "timestamp": "2024-11-01T23:05:40.659464",
+        "timestamp": "2024-11-01T23:49:08.716826",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "9fa9330d9d1383471aa4506b02aa6523ed7453bd5099c17dfadfe7a73c185a15",
+        "hash": "c7760b581efeecaca2afd38b0e7d5afb1740498d6e15f99420e247fc86a15819",
         "license_plate": "LKEA TV",
-        "timestamp": "2024-11-01T23:05:40.924877",
+        "timestamp": "2024-11-01T23:49:09.017335",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "0894699418e4ef0d65ed57ae80cffb74224a16d6718aec156524de779e4995df",
+        "hash": "9060426eacb650a4c99fa0fe5a08b956e47b1cedf7321f905dfcc797893f7b7e",
         "license_plate": "LKBA DL",
-        "timestamp": "2024-11-01T23:05:41.266092",
+        "timestamp": "2024-11-01T23:49:09.355308",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "a0c4bb6885431130ad3fb0a27dfa89eece4185208ea07f11a17250f199417ce0",
+        "hash": "13ac93c35b5f3de0a39d44a1769b36d3cd7fd16e381039290f3aec6679e842d8",
         "license_plate": "ELQP ZU",
-        "timestamp": "2024-11-01T23:05:41.511853",
+        "timestamp": "2024-11-01T23:49:09.625860",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "87a729f169e0e47bbae92d6b41b4f46d352f84eb8386c9b617ffea7dc1343ec4",
+        "hash": "1948297885a19b8bf018f64e90232fd7371ff59e7d2d7dbf69e97909d261291b",
         "license_plate": "LKBA OV",
-        "timestamp": "2024-11-01T23:05:41.537785",
+        "timestamp": "2024-11-01T23:49:09.649976",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "2fab19f904036c25d6cb6e0a0848bbcacb391197de336a3cef3fccca6f5b40e9",
+        "hash": "adaecbff669f1dd626b2be41186a9df4094ba6ca69e36ed92ff8dc4e6af34fbb",
         "license_plate": "EFLO 0Z",
-        "timestamp": "2024-11-01T23:05:42.082492",
+        "timestamp": "2024-11-01T23:49:10.205894",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "87ba8e46f4042088c16e832c0f23e1ead4308a756fdda578ec76f2578d47c052",
+        "hash": "1a5566b8536d2f049b329344055b841924ab9f67c0061701a8ba754c9d0a795b",
         "license_plate": "EROD ZT",
-        "timestamp": "2024-11-01T23:05:42.360945",
+        "timestamp": "2024-11-01T23:49:10.482993",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "2b6e96fbcb47fc5348e80e9ad9431c942a33b27a47bbe57d4edda49c3cf3896b",
+        "hash": "dd428e780275664c2ab52c98188c6c55a42d3da6af69c62d101da7098244e6f5",
         "license_plate": "EEOD ZT",
-        "timestamp": "2024-11-01T23:05:44.094285",
+        "timestamp": "2024-11-01T23:49:12.260663",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "bd3fcad3de3faa785f3a54c28aae69b3fad3fbd31ef1a0606eefdde22c00f4e1",
+        "hash": "5c0167384556db889ba34b580ce8b06b240053f3b8eeac3dd7b04ca853f237e4",
         "license_plate": "065  JKV",
-        "timestamp": "2024-11-01T23:05:46.579259",
+        "timestamp": "2024-11-01T23:49:14.898700",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "8d08635747a477eaf9f3317de23d9d9119ecdf3d0c7283e10dbac1d33c8d47cb",
+        "hash": "ef16ad6e09c82e2bea542c7d22c4fcefb95ebfe3e54ebef6fd439c43f4b362d6",
         "license_plate": "WBSU KM",
-        "timestamp": "2024-11-01T23:05:47.126727",
+        "timestamp": "2024-11-01T23:49:15.457086",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "0f67c2979c8ab31765eafb25e01a8f395a28b85788054cae6fa683d56af6b3e6",
+        "hash": "d752c602a669ba638dcfd9b52c6062d536395cc1b6083a57ee2c6242e01f5346",
         "license_plate": "GOBE RD",
-        "timestamp": "2024-11-01T23:05:48.784621",
+        "timestamp": "2024-11-01T23:49:17.103325",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "09f7a3b72039f643e64e2026b896c50fa5b906e456afcde6fa9e4b9c0a2c45a5",
+        "hash": "aa26622bb3a6b2bdfa1cd4c8f3b2c6effb848f297c95619dc605307c3f3d411a",
         "license_plate": "6JO6  ER",
-        "timestamp": "2024-11-01T23:05:50.460106",
+        "timestamp": "2024-11-01T23:49:18.772411",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "82390b460374e6f101677754e5655b1a3461df03e9c2400702a8b2053dabf3d0",
+        "hash": "120b291f0742d46df7b468e8624cf7da83e8b115d9b385e2d5123879412847c1",
         "license_plate": "LMSZ ZQ",
-        "timestamp": "2024-11-01T23:05:50.730232",
+        "timestamp": "2024-11-01T23:49:19.070439",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "8f92f1008bbf16ac4332b38f9f6d2a7be2c5e349b911c0de2e91fb907195fd92",
+        "hash": "094634678ac91e8f519cb39c8ac79a864f167318bd43baf570dda1a66310651f",
         "license_plate": "LNSZ Z0",
-        "timestamp": "2024-11-01T23:05:53.381316",
+        "timestamp": "2024-11-01T23:49:21.794068",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "b17b70ce3b42de245d4d450c7ee514055fb6f523b262fc0c1de212260c22b00d",
+        "hash": "754e3c97143ae4b3d7269bcf839d1ec7a0245fcc91837f62dd7284c220864d5f",
         "license_plate": "LNSZ ZC",
-        "timestamp": "2024-11-01T23:05:53.653670",
+        "timestamp": "2024-11-01T23:49:22.053895",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "1794e6f8ea063585e4690378d630422eb515dc93a79decfc6e2b5e2ac1a6ebec",
+        "hash": "37e7299b6183c4e504fff7ea252c2e09f16663650c9bbf90d07c3976c29d046b",
         "license_plate": "LN5Z Z0",
-        "timestamp": "2024-11-01T23:05:54.170018",
+        "timestamp": "2024-11-01T23:49:22.597513",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "5b7b08baca16d92d8d7bf400f2f01e53bc33ab36dd83998e42220170e6a6281f",
+        "hash": "74d6555d3e4a2a3d77d609523ff5e901de5e743be579b0cdbe4c35cc34c20c0a",
         "license_plate": "DIOZ LX",
-        "timestamp": "2024-11-01T23:05:54.709949",
+        "timestamp": "2024-11-01T23:49:23.134239",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "bf60e1e871a14670cd75e103d80930bacd8d674668235166147e070f650504c8",
+        "hash": "8bad9ca57c53cd1caab2a7d4e6920c9c7dd3e4e2f99e9eabfbadcafd644ee824",
         "license_plate": "IJOL LX",
-        "timestamp": "2024-11-01T23:05:55.245320",
+        "timestamp": "2024-11-01T23:49:23.676193",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "f7e1aa69ab6dfef4b39acc827161cf6db0af099b8830276cc04f68d82aa1abc4",
+        "hash": "baa500954ef50eb4da6de54d930789adb9dee48e7b2ee2a848ead27876d376c0",
         "license_plate": "DIOC LX",
-        "timestamp": "2024-11-01T23:05:55.509022",
+        "timestamp": "2024-11-01T23:49:23.942592",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "a24da2435193fb170d5b2932b4294fb148af6ebecbeac0629acf5fa2676ea203",
+        "hash": "3020f34c4e83447171dc775e18514e71be0874252d2345d07077b0fec873e90e",
         "license_plate": "MOZC LX",
-        "timestamp": "2024-11-01T23:05:56.906773",
+        "timestamp": "2024-11-01T23:49:25.343036",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "1ff1abed1f6c0a15c608cdadeddd920ae44468c9cb4e8ae0c07fbaaa88fbbda3",
+        "hash": "a4d0ef603d59782507b2edd59ce3872f628cdcba5497d7f15a22e3128201dd3f",
         "license_plate": "IOZC LX",
-        "timestamp": "2024-11-01T23:05:57.167679",
+        "timestamp": "2024-11-01T23:49:25.624435",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "f2a056c612486a00878ecef20386824c91aa9882a0d85ebe6f46491b4bb829bc",
+        "hash": "a4d70aab948b1c7a8cc3b16d0bd1cbc5992b646fba34ef51db89b83c9d9139d4",
         "license_plate": "DOZC LX",
-        "timestamp": "2024-11-01T23:05:57.694168",
+        "timestamp": "2024-11-01T23:49:26.117349",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "111d98bc510eda9c06039454ffe7b52d413f2d0125e00efdd333fc2585ee6fee",
+        "hash": "15179a14baa3404305ce2b51f7cac24a3e478ef131f58d4183516740b2c6dc64",
         "license_plate": "EYOS US",
-        "timestamp": "2024-11-01T23:06:00.044073",
+        "timestamp": "2024-11-01T23:49:28.530610",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "2fa1099195d19583fed92d42a9afa8d7c09432385bb9eee170cdb1d05c043477",
+        "hash": "97f4da3dcd0c1d3462f0e716e1bca1d70dda1642db3e273a37e75184152e28d0",
         "license_plate": "EYOG UD",
-        "timestamp": "2024-11-01T23:06:00.313485",
+        "timestamp": "2024-11-01T23:49:28.807572",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "27ea009847beef42bbec6f5134c7145821c274119b249b424791e73ff47b4a0e",
+        "hash": "50c5f452108ec51286320732d77d616744098f4ea743c8cbb68c8e2a1f80a206",
         "license_plate": "EYOS WS",
-        "timestamp": "2024-11-01T23:06:00.925351",
+        "timestamp": "2024-11-01T23:49:29.598871",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "c47aa02826ed5d2e49e4f06d42210a9bac38e15ee9aca76e664ee5e9cc9ad2ef",
+        "hash": "b26f180021b6ca06c3f79c5b9c14262bd613deec8afeeb073ce20651e2babedb",
         "license_plate": "C64O G3",
-        "timestamp": "2024-11-01T23:06:14.646087",
+        "timestamp": "2024-11-01T23:49:44.089369",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "e5155ef2524abecdb63d68a87460a8cefaa358870efb46c4423680072b273ada",
+        "hash": "b7e643a9fd149874a8e441a6e078e55b6daf3ca2123f8babaef8fe4140ef737e",
         "license_plate": "H64O GU",
-        "timestamp": "2024-11-01T23:06:14.929728",
+        "timestamp": "2024-11-01T23:49:44.376700",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "a9027c78d978304fb9a16716275852792e0401631d151bea9a64321855bcc3f4",
+        "hash": "4dcf6de94dbfe72451d5750af74abc80ae8b9d479ce263320e03c072080e2c97",
         "license_plate": "0640 53",
-        "timestamp": "2024-11-01T23:06:15.494036",
+        "timestamp": "2024-11-01T23:49:44.950244",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "d368057089be449c48386aaaa149c57e755c72b954d4d6a4e068d06a73bcee43",
+        "hash": "35a0055d290bd528595b3d194b3d1eb31e991887fd98a6ba1503564f734d9245",
         "license_plate": "NL64 OG",
-        "timestamp": "2024-11-01T23:06:16.562462",
+        "timestamp": "2024-11-01T23:49:46.024776",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "6c848220886c836c6f0d494817e043369e62803554f8ff7e97154ba991dd0c6d",
+        "hash": "fcd04b12bfb529885bfc910507484a21fad3d58630f3774f25bd004ef2bdf600",
         "license_plate": "LARL AL",
-        "timestamp": "2024-11-01T23:06:17.065224",
+        "timestamp": "2024-11-01T23:49:46.018310",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "21a541741ec62cba9a003b2639d145882c967d399b8f8a2fdf2ed4a26f1f2bbf",
+        "hash": "4467aa381daecc1f5e44ee7cb8670b45005e4d2b1e9732561e6bf1a5b87e2ddc",
         "license_plate": "M64O C7",
-        "timestamp": "2024-11-01T23:06:17.369019",
+        "timestamp": "2024-11-01T23:49:46.322515",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "c36713dce2b65da5b8b80b67181fb39ca1fddf0f5899b90437286dfc94bd491a",
+        "hash": "d034b47203b284b4354e9e046d5cb06ef9561609febde43d371a9739f70aaea1",
         "license_plate": "LILL IA",
-        "timestamp": "2024-11-01T23:06:17.606413",
+        "timestamp": "2024-11-01T23:49:46.567525",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "0f40dad268d0eefb8c0c11b5c13034a86bfa8719c8f6b1e8a2f556e3c9a3565d",
+        "hash": "28fb859f58c6949386187bb187acef39ca249e6946706af8f39c198373ac12d0",
         "license_plate": "M64O CD",
-        "timestamp": "2024-11-01T23:06:17.624964",
+        "timestamp": "2024-11-01T23:49:46.586378",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "dde9be085651dc5e3bd90572561fdd334480e942bb93e58c3b180ab4adba7eec",
+        "hash": "779f75fc3660c9216bc907f55846e8cfb2153dca5185f8a9bb521d25eeed345c",
         "license_plate": "LPLL LI",
-        "timestamp": "2024-11-01T23:06:17.873671",
+        "timestamp": "2024-11-01T23:49:46.862769",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "4e77ceb18d2423838c62b215365d2b06d425fd6f300f827754299ffcdad2a56d",
+        "hash": "0247f6779d24de3081dafa1ab6d373c270c3cbc6af50a4b3b190b790a895e26d",
         "license_plate": "M64O QJ",
-        "timestamp": "2024-11-01T23:06:18.185466",
+        "timestamp": "2024-11-01T23:49:47.178305",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "82664a05d58a1255955bbe2efdba94f215bf4c832067dfa8f4b0cb56ecb6104d",
+        "hash": "2129f6fb15952dfd689bbf06b54d5bbc7a0d689b23f2bfe6079ec68483fac6cb",
         "license_plate": "LPIL LI",
-        "timestamp": "2024-11-01T23:06:18.678762",
+        "timestamp": "2024-11-01T23:49:47.734660",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "c3b5f87050c18a2f603464863dcba4775c650277fe7fd1b144db3a0eff12b0de",
+        "hash": "7d3486a442c3477505345f1d72d5fe3481578845f98e43d3a336b658ad055cf1",
         "license_plate": "TEGI LC",
-        "timestamp": "2024-11-01T23:06:29.214592",
+        "timestamp": "2024-11-01T23:49:58.207611",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "250e43ba886be244b01030736bf1e343edbe64a40907ef2963d95ce346405763",
+        "hash": "c2ba75f085bc8a56e532e95a5f77405e79ff866523808d01679cb442bcd49c4c",
         "license_plate": "CEGI LL",
-        "timestamp": "2024-11-01T23:06:31.142554",
+        "timestamp": "2024-11-01T23:50:00.101144",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "6fcd5ffb4f4fcd04ede803faccdf91799a7968bf94fb7a7954cc0e0f5f1d502f",
+        "hash": "f6ce267dda91009deed92c9671d5fcf61a3a82eed0b9e09ddf8738f2cff37306",
         "license_plate": "CEOU UL",
-        "timestamp": "2024-11-01T23:06:31.405966",
+        "timestamp": "2024-11-01T23:50:00.361932",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "f2a1cc642bfbf5f0aca3822f68695bc0e3e0d17b6b54593bc6d5485129da7e3b",
+        "hash": "3fcbe5b6ccc9690c753855593add9481c3764e517f988eb00b57ed7791a4f057",
         "license_plate": "CEBI QL",
-        "timestamp": "2024-11-01T23:06:31.960441",
+        "timestamp": "2024-11-01T23:50:00.945097",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "fed2b5e5a4262a060123cb4f5ef5dcd9394677ab8be836e224d68f353e8fdab6",
+        "hash": "b14fec7b777078a1d4156d171caa5325042440ef975d2c482bd302a4b2d96b89",
         "license_plate": "CEBI CL",
-        "timestamp": "2024-11-01T23:06:32.775271",
+        "timestamp": "2024-11-01T23:50:01.776692",
         "latitude": 0,
         "longitude": 0
     },
     {
-        "hash": "769b08b38336d4cb9bdf3449cb2b8286cd91c60d9b6bb4a444c9c464bc316357",
+        "hash": "a3e7bc431ea890928f1aa7ea3bb47fda8eb7dfe24826d4dd328ffd6aceb97394",
         "license_plate": "CEBI LL",
-        "timestamp": "2024-11-01T23:06:33.037212",
+        "timestamp": "2024-11-01T23:50:02.072658",
         "latitude": 0,
         "longitude": 0
     }
