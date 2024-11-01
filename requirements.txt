@@ -1,0 +1,5 @@
+numpy~=2.1.2
+ffmpeg~=1.4
+ultralytics~=8.3.27
+easyocr~=1.7.2
+opencv-python~=4.10.0.84
