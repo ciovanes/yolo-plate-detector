@@ -1,5 +1,7 @@
 import ffmpeg
 import os
+import numpy as np
+import cv2 as cv
 
 def limit_fps(src: str, dest: str, fps: int):
 
@@ -28,3 +30,33 @@ def limit_fps(src: str, dest: str, fps: int):
         return video_output
     except ffmpeg.Error as e:
         print("Error:", e)
+
+
+def apply_NMS(boxes, scores):
+    """
+        Apply non max suppression technique to select the best bounding boxes 
+        out of a set of overlapping boxes 
+
+        Return:
+            indices ->
+    """
+    boxes = np.array(boxes)
+    scores = np.array(scores)
+
+    # Apply Non-maxium suppresion
+    indices = cv.dnn.NMSBoxes(boxes.tolist(), scores.tolist(), 
+                              score_threshold=0.5, nms_threshold=0.4)
+
+    return indices
+
+
+def draw_text(frame, text, ptx, pty, txt_pt, bg_color, txt_color):
+    """
+        Draw text box
+    """
+    text_size = cv.getTextSize(text, cv.FONT_HERSHEY_COMPLEX, 0.5, 1)
+    text_width, text_height = text_size[0] 
+
+    cv.rectangle(frame, (ptx, pty - text_height - 10), (ptx + text_width, pty),
+                 bg_color, -1) 
+    cv.putText(frame, text, txt_pt, cv.FONT_HERSHEY_COMPLEX, 0.5, txt_color)
