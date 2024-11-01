@@ -4,6 +4,8 @@ libs:
 - opencv-python
 - ultralytics
 - ffmpeg
+- easyocr
+- sort-tracker
 
 **TODO**
 - set id's for cars using (cv.legacy.MultiTracker_create())
