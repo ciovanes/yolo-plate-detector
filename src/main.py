@@ -1,7 +1,8 @@
 import cv2 as cv
 from detector import LicensePlateDetector, VehicleDetector
-from utils import limit_fps, apply_NMS, draw_text
+from utils import * 
 import numpy as np
+from saver import LicensePlateSaver
 
 
 class TrafficFlowAnalyzer:
@@ -10,6 +11,8 @@ class TrafficFlowAnalyzer:
         self.video_path = video_path
         self.vehicle_model = vehicle_model
         self.license_plate_model = license_plate_model
+        self.detected_plates = set()
+        self.saver = LicensePlateSaver()
 
 
     def vehicle_detection(self, frame):
@@ -82,10 +85,23 @@ class TrafficFlowAnalyzer:
         draw_text(frame, text, box[0], box[1], (box[0], box[1] - 10), (0, 0, 0), (0, 255, 255))
 
 
+    def add_to_detected_plates(self, license_plate):
+        # Check current size
+        current_size = len(self.detected_plates)
+
+        # Add non duplicates license plates
+        self.detected_plates.add(license_plate)
+
+        if len(self.detected_plates) > current_size:
+            return True
+
+        return False 
+
+
     def run(self):
         cap = cv.VideoCapture(self.video_path)
         
-        detected_plates = set()
+        # detected_plates = set()
 
         while cap.isOpened():
             ret, frame = cap.read()
@@ -99,9 +115,9 @@ class TrafficFlowAnalyzer:
 
             # screen_width = cv.getWindowImageRect(window_name)[2]
             # screen_height = cv.getWindowImageRect(window_name)[3]
-            screen_width = 1280
-            screen_height = 720 
-            cv.resizeWindow(window_name, screen_width, screen_height)
+            # screen_width = 1280
+            # screen_height = 720 
+            # cv.resizeWindow(window_name, screen_width, screen_height)
 
             # Get car detection (bbox, confidence and class)
             v_boxes, v_scores, v_classes = self.vehicle_detection(frame)
@@ -127,12 +143,13 @@ class TrafficFlowAnalyzer:
                         license_plate_number = self.license_plate_model.extract_license_plate_number(roi)
                         # print(license_plate_number)
 
-                    if license_plate_number:
-                        plate_number = license_plate_number[0]
-                        detected_plates.add(plate_number)
+                    if license_plate_number and is_valid_license_plate(license_plate_number[0]):
+                        license_plate = format_license_plate(license_plate_number[0])
                         box = [x1, y1, x2, y2]
-                        self.draw_licence_plate_bbox(frame, box, plate_number)
-                        # print(detected_plates)
+                        self.draw_licence_plate_bbox(frame, box, license_plate)
+
+                        if self.add_to_detected_plates(license_plate):
+                            self.saver.save(license_plate=license_plate)
 
 
             # Quit if 'q' pressed 
@@ -147,10 +164,11 @@ class TrafficFlowAnalyzer:
 
         cap.release()
         cv.destroyAllWindows()
-        print(detected_plates)
+
 
 if __name__ == '__main__':
-    
+
+    # video_path = limit_fps(src='../data/traffic-flow.mp4', fps=5) 
     video_path = '../data/traffic-flow-limited(5fps).mp4'
     vehicle_detector = VehicleDetector('../models/yolov8n.pt')
     license_plate_detector = LicensePlateDetector('../models/license_plate_detector.pt')
